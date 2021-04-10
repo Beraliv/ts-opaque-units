@@ -24,13 +24,15 @@ export const yearsToDays = (
       daysInYear++;
     }
 
-    if (years > 1) {
+    if (years >= 1) {
       days += daysInYear;
       years--;
     } else {
       days += years * daysInYear;
       years = 0 as Years;
     }
+
+    currentYear++;
   }
 
   return days as Days;

@@ -28,6 +28,8 @@ export const daysToYears = (days: Days, start?: StartForDaysToYears): Years => {
       years += days / daysInYear;
       days = 0 as Days;
     }
+
+    currentYear++;
   }
 
   return years as Years;

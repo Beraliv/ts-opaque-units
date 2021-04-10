@@ -50,4 +50,22 @@ describe(yearsToDays.name, () => {
 
     expect(actual).toEqual<typeof actual>(expected);
   });
+
+  test("returns 1461 for 48 months from March 1946", () => {
+    const actual = yearsToDays(4 as Years, {
+      year: 1946 as Years,
+    });
+    const expected = 1461 as Days;
+
+    expect(actual).toEqual<typeof actual>(expected);
+  });
+
+  test("returns 19541 for 53.5 years from 1967", () => {
+    const actual = yearsToDays(53.5 as Years, {
+      year: 1967 as Years,
+    });
+    const expected = 19541 as Days;
+
+    expect(actual).toEqual<typeof actual>(expected);
+  });
 });
