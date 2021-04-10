@@ -24,6 +24,15 @@ describe(daysToYears.name, () => {
     expect(actual).toEqual<typeof actual>(expected);
   });
 
+  test("returns 0.5 for 183 days in 2020 (leap year)", () => {
+    const actual = daysToYears(183 as Days, {
+      year: 2020 as Years,
+    });
+    const expected = 0.5 as Years;
+
+    expect(actual).toEqual<typeof actual>(expected);
+  });
+
   test("returns 1 for 366 days in 2020 (leap year)", () => {
     const actual = daysToYears(366 as Days, {
       year: 2020 as Years,
