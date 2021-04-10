@@ -1,11 +1,11 @@
-# ts-measurement
+# ts-opaque-units
 
 Small TypeScript opaque measurement library
 
 ## Install
 
 ```bash
-yarn add ts-measurement typescript@^4.0.0
+yarn add ts-opaque-units typescript@^4.0.0
 ```
 
 ## Opaque types
@@ -51,7 +51,7 @@ hours = twoHours;
 To transform one type to another safely, use a function `convert`:
 
 ```ts
-import { convert, Minutes, Years } from "ts-measurement";
+import { convert, Minutes, Years } from "ts-opaque-units";
 
 const minutesInHour = 60 as Minutes;
 const secondsInHour = convert(minutesInHour, "minutes", "seconds");

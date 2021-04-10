@@ -1,5 +1,5 @@
 {
-  "name": "ts-measurement",
+  "name": "ts-opaque-units",
   "version": "0.0.1",
   "description": "TypeScript opaque measurement",
   "main": "dist/index.js",
@@ -15,7 +15,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Beraliv/ts-measurement.git"
+    "url": "git+https://github.com/Beraliv/ts-opaque-units.git"
   },
   "keywords": [
     "typescript",
@@ -23,12 +23,12 @@
     "measurement",
     "utils"
   ],
-  "author": "Alexey Berezin <me@beraliv.dev>",
+  "author": "Alexey Berezin <beraliv.spb@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Beraliv/ts-measurement/issues"
+    "url": "https://github.com/Beraliv/ts-opaque-units/issues"
   },
-  "homepage": "https://github.com/Beraliv/ts-measurement#readme",
+  "homepage": "https://github.com/Beraliv/ts-opaque-units#readme",
   "peerDependencies": {
     "typescript": "^4.0.0"
   },
