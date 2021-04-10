@@ -4,6 +4,7 @@ import { Days } from "../types/Days";
 import { Months } from "../types/Months";
 import { Years } from "../types/Years";
 import { isLeapYear } from "./isLeapYear";
+
 export interface StartForDaysToMonths {
   month: MonthName;
   year: Years;
@@ -11,7 +12,7 @@ export interface StartForDaysToMonths {
 
 export const daysToMonths = (days: Days, start?: StartForDaysToMonths) => {
   if (start === undefined) {
-    return (days / 30.4167) as Months;
+    return (days / 30.4375) as Months;
   }
 
   const { month: startMonth, year } = start;
