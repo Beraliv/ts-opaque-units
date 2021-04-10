@@ -15,7 +15,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ts-measurement/ts-measurement.git"
+    "url": "git+https://github.com/Beraliv/ts-measurement.git"
   },
   "keywords": [
     "typescript",
@@ -26,9 +26,9 @@
   "author": "Alexey Berezin <me@beraliv.dev>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ts-measurement/ts-measurement/issues"
+    "url": "https://github.com/Beraliv/ts-measurement/issues"
   },
-  "homepage": "https://github.com/ts-measurement/ts-measurement#readme",
+  "homepage": "https://github.com/Beraliv/ts-measurement#readme",
   "peerDependencies": {
     "typescript": "^4.0.0"
   },
