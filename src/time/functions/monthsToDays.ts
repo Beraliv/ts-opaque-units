@@ -1,78 +1,14 @@
+import { DAYS_IN_MONTHS } from "../../../internal/time/constants/DAYS_IN_MONTHS";
+import { MonthName } from "../../../internal/time/types/MonthName";
 import { Days } from "../types/Days";
 import { Months } from "../types/Months";
 import { Years } from "../types/Years";
 import { isLeapYear } from "./isLeapYear";
 
-export type StartForDaysToMonths = {
-  month:
-    | "January"
-    | "February"
-    | "March"
-    | "April"
-    | "May"
-    | "June"
-    | "July"
-    | "August"
-    | "September"
-    | "October"
-    | "November"
-    | "December";
+export interface StartForDaysToMonths {
+  month: MonthName;
   year: Years;
-};
-
-const DAYS_IN_MONTHS: {
-  day: number;
-  month: StartForDaysToMonths["month"];
-}[] = [
-  {
-    day: 31,
-    month: "January",
-  },
-  {
-    day: 28,
-    month: "February",
-  },
-  {
-    day: 31,
-    month: "March",
-  },
-  {
-    day: 30,
-    month: "April",
-  },
-  {
-    day: 31,
-    month: "May",
-  },
-  {
-    day: 30,
-    month: "June",
-  },
-  {
-    day: 31,
-    month: "July",
-  },
-  {
-    day: 31,
-    month: "August",
-  },
-  {
-    day: 30,
-    month: "September",
-  },
-  {
-    day: 31,
-    month: "October",
-  },
-  {
-    day: 30,
-    month: "November",
-  },
-  {
-    day: 31,
-    month: "December",
-  },
-];
+}
 
 export const monthsToDays = (months: Months, start?: StartForDaysToMonths) => {
   if (start === undefined) {
