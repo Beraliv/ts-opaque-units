@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "commonjs",
+    "strict": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "lib": ["es2015", "esnext.asynciterable"],
+    "sourceMap": true,
+    "declaration": true
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}
