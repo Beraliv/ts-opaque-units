@@ -1,7 +1,7 @@
 {
   "name": "ts-measurement",
   "version": "0.0.1",
-  "description": "TypeScript measure types and utility functions for that",
+  "description": "TypeScript opaque measurement",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
