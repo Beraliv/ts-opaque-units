@@ -114,7 +114,7 @@ describe(convert.name, () => {
 
   test("milliseconds => 1 month (for March)", () => {
     const actual = convert(
-      2_419_200_000 as Milliseconds,
+      2_678_400_000 as Milliseconds,
       "milliseconds",
       "months",
       { month: "March", year: 2021 as Years }
@@ -138,7 +138,7 @@ describe(convert.name, () => {
 
   test("milliseconds => 1 month (for May)", () => {
     const actual = convert(
-      2_419_200_000 as Milliseconds,
+      2_678_400_000 as Milliseconds,
       "milliseconds",
       "months",
       { month: "May", year: 2021 as Years }
@@ -162,7 +162,7 @@ describe(convert.name, () => {
 
   test("milliseconds => 1 month (for July)", () => {
     const actual = convert(
-      2_419_200_000 as Milliseconds,
+      2_678_400_000 as Milliseconds,
       "milliseconds",
       "months",
       { month: "July", year: 2021 as Years }
@@ -174,7 +174,7 @@ describe(convert.name, () => {
 
   test("milliseconds => 1 month (for August)", () => {
     const actual = convert(
-      2_419_200_000 as Milliseconds,
+      2_678_400_000 as Milliseconds,
       "milliseconds",
       "months",
       { month: "August", year: 2021 as Years }
@@ -198,7 +198,7 @@ describe(convert.name, () => {
 
   test("milliseconds => 1 month (for October)", () => {
     const actual = convert(
-      2_419_200_000 as Milliseconds,
+      2_678_400_000 as Milliseconds,
       "milliseconds",
       "months",
       { month: "October", year: 2021 as Years }
@@ -222,7 +222,7 @@ describe(convert.name, () => {
 
   test("milliseconds => 1 month (for December)", () => {
     const actual = convert(
-      2_419_200_000 as Milliseconds,
+      2_678_400_000 as Milliseconds,
       "milliseconds",
       "months",
       { month: "December", year: 2021 as Years }

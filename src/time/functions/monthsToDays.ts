@@ -5,12 +5,12 @@ import { Months } from "../types/Months";
 import { Years } from "../types/Years";
 import { isLeapYear } from "./isLeapYear";
 
-export interface StartForDaysToMonths {
+export interface StartForMonthsToDays {
   month: MonthName;
   year: Years;
 }
 
-export const monthsToDays = (months: Months, start?: StartForDaysToMonths) => {
+export const monthsToDays = (months: Months, start?: StartForMonthsToDays) => {
   if (start === undefined) {
     return (months * 30.4167) as Days;
   }

@@ -11,6 +11,7 @@ import { Seconds } from "../types/Seconds";
 import { Weeks } from "../types/Weeks";
 import { Years } from "../types/Years";
 import { daysToMonths, StartForDaysToMonths } from "./daysToMonths";
+import { StartForDaysToYears } from "./daysToYears";
 import { monthsToDays } from "./monthsToDays";
 
 const measurements = [
@@ -65,6 +66,8 @@ type cases = [
   Expect<Equal<MeasurementAndTimeMapping[MeasurementType], TimeType[number]>>
 ];
 
+type Start = StartForDaysToMonths | StartForDaysToYears;
+
 export function convert<
   From extends keyof MeasurementAndTimeMapping,
   To extends keyof MeasurementAndTimeMapping
@@ -72,8 +75,9 @@ export function convert<
   value: MeasurementAndTimeMapping[From],
   from: From,
   to: To,
-  start?: StartForDaysToMonths
+  start?: Start
 ): MeasurementAndTimeMapping[To] {
+  let previousResult: number | undefined;
   let result = value as number;
   let startIndex = measurements.findIndex(
     (measurement) => measurement === from
@@ -93,13 +97,14 @@ export function convert<
   if (startIndex < endIndex) {
     for (let index = startIndex + 1; index <= endIndex; index++) {
       const step = ascendingSteps[index];
-      if (nextStep) {
-        nextStep = false;
-      } else if (step !== step) {
-        // months is NaN (weeks => months)
-        nextStep = true;
-        result = daysToMonths(result as Days, start);
+      if (step !== step) {
+        if (previousResult) {
+          result = previousResult;
+          previousResult = undefined;
+        }
+        result = daysToMonths(result as Days, start as StartForDaysToMonths);
       } else {
+        previousResult = result;
         result /= step;
       }
     }
@@ -112,7 +117,7 @@ export function convert<
         // weeks is NaN (weeks <= months)
         nextStep = true;
         result /= descendingSteps[index - 1];
-        result = monthsToDays(result as Months, start);
+        result = monthsToDays(result as Months, start as StartForDaysToMonths);
       } else {
         result *= step;
       }

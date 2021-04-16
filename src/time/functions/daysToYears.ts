@@ -2,7 +2,7 @@ import { Days } from "../types/Days";
 import { Years } from "../types/Years";
 import { isLeapYear } from "./isLeapYear";
 
-interface StartForDaysToYears {
+export interface StartForDaysToYears {
   year: Years;
 }
 
