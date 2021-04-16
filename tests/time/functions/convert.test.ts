@@ -206,13 +206,6 @@ describe(convert.name, () => {
     expect(actual).toEqual<typeof actual>(expected);
   });
 
-  test("returns seconds from milliseconds", () => {
-    const actual = convert(1_000 as Milliseconds, "milliseconds", "seconds");
-    const expected = 1 as Seconds;
-
-    expect(actual).toEqual<typeof actual>(expected);
-  });
-
   test("returns milliseconds from seconds", () => {
     const actual = convert(1 as Seconds, "seconds", "milliseconds");
     const expected = 1_000 as Milliseconds;
