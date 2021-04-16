@@ -1,5 +1,9 @@
 # ts-opaque-units
 
+![minified](https://badgen.net/bundlephobia/min/ts-opaque-units)
+![minified + gzip](https://badgen.net/bundlephobia/minzip/ts-opaque-units)
+![tree-shaking support](https://badgen.net/bundlephobia/tree-shaking/ts-opaque-units)
+
 Small TypeScript opaque measurement library
 
 ## Install
