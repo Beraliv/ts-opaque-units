@@ -11,8 +11,8 @@ describe(daysToMonths.name, () => {
     expect(actual).toEqual<typeof actual>(expected);
   });
 
-  test("returns 1 for 30.4167 days without passing start date", () => {
-    const actual = daysToMonths(30.4167 as Days);
+  test("returns 1 for 30.4375 days without passing start date", () => {
+    const actual = daysToMonths(30.4375 as Days);
     const expected = 1 as Months;
 
     expect(actual).toEqual<typeof actual>(expected);

@@ -74,47 +74,45 @@ export function convert<
   to: To,
   start?: StartForDaysToMonths
 ): MeasurementAndTimeMapping[To] {
+  let previousResult: number | undefined;
   let result = value as number;
   let startIndex = measurements.findIndex(
     (measurement) => measurement === from
   );
   let endIndex = measurements.findIndex((measurement) => measurement === to);
 
-  if (
-    (from === "weeks" && endIndex >= 6) ||
-    (startIndex >= 6 && to === "weeks")
-  ) {
-    throw new Error(
-      `ImplementationTypeError: does NOT support ${from} => ${to}`
-    );
-  }
-
-  let nextStep = false;
   if (startIndex < endIndex) {
     for (let index = startIndex + 1; index <= endIndex; index++) {
       const step = ascendingSteps[index];
-      if (nextStep) {
-        nextStep = false;
-      } else if (step !== step) {
-        // months is NaN (weeks => months)
-        nextStep = true;
-        result = daysToMonths(result as Days, start);
+      if (step !== step) {
+        if (previousResult) {
+          result = previousResult;
+          previousResult = undefined;
+        } else {
+          result *= ascendingSteps[index - 1];
+        }
+        result = daysToMonths(result as Days, start as StartForDaysToMonths);
       } else {
+        previousResult = result;
         result /= step;
       }
     }
   } else if (startIndex > endIndex) {
     for (let index = startIndex - 1; index >= endIndex; index--) {
       const step = descendingSteps[index];
-      if (nextStep) {
-        nextStep = false;
-      } else if (step !== step) {
-        // weeks is NaN (weeks <= months)
-        nextStep = true;
-        result /= descendingSteps[index - 1];
-        result = monthsToDays(result as Months, start);
+      if (step !== step) {
+        previousResult = monthsToDays(
+          result as Months,
+          start as StartForDaysToMonths
+        );
+        result = previousResult / 7;
       } else {
-        result *= step;
+        if (previousResult) {
+          result = previousResult;
+          previousResult = undefined;
+        } else {
+          result *= step;
+        }
       }
     }
   }
