@@ -84,16 +84,6 @@ export function convert<
   );
   let endIndex = measurements.findIndex((measurement) => measurement === to);
 
-  if (
-    (from === "weeks" && endIndex >= 6) ||
-    (startIndex >= 6 && to === "weeks")
-  ) {
-    throw new Error(
-      `ImplementationTypeError: does NOT support ${from} => ${to}`
-    );
-  }
-
-  let nextStep = false;
   if (startIndex < endIndex) {
     for (let index = startIndex + 1; index <= endIndex; index++) {
       const step = ascendingSteps[index];
@@ -111,15 +101,19 @@ export function convert<
   } else if (startIndex > endIndex) {
     for (let index = startIndex - 1; index >= endIndex; index--) {
       const step = descendingSteps[index];
-      if (nextStep) {
-        nextStep = false;
-      } else if (step !== step) {
-        // weeks is NaN (weeks <= months)
-        nextStep = true;
-        result /= descendingSteps[index - 1];
-        result = monthsToDays(result as Months, start as StartForDaysToMonths);
+      if (step !== step) {
+        previousResult = monthsToDays(
+          result as Months,
+          start as StartForDaysToMonths
+        );
+        result = previousResult / 7;
       } else {
-        result *= step;
+        if (previousResult) {
+          result = previousResult;
+          previousResult = undefined;
+        } else {
+          result *= step;
+        }
       }
     }
   }
