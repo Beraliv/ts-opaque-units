@@ -73,7 +73,6 @@ describe(convert.name, () => {
     const expected = 1 as Months;
 
     expect(actual).toEqual<typeof actual>(expected);
-    expect(actual).toEqual<typeof actual>(expected);
   });
 
   test("milliseconds => 1 month (for January)", () => {
