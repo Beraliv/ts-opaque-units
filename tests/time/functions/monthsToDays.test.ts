@@ -157,14 +157,4 @@ describe(monthsToDays.name, () => {
 
     expect(actual).toEqual<typeof actual>(expected);
   });
-
-  test("returns 19541 for 642 months from October 1967", () => {
-    const actual = monthsToDays(642 as Months, {
-      month: "October",
-      year: 1967 as Years,
-    });
-    const expected = 19541 as Days;
-
-    expect(actual).toEqual<typeof actual>(expected);
-  });
 });
