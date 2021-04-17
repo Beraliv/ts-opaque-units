@@ -6,7 +6,8 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "rimraf ./dist && tsc -p tsconfig.prod.json --outDir ./dist",
-    "test": "jest --coverage",
+    "test": "jest --coverage && yarn test:badge || yarn test:badge",
+    "test:badge": "make-coverage-badge --output-path ./badges/coverage.svg",
     "check:ts": "tsc --noEmit",
     "prettier": "prettier -c **/*.ts"
   },
@@ -36,6 +37,7 @@
     "@type-challenges/utils": "^0.1.1",
     "@types/jest": "^26.0.22",
     "jest": "^26.6.3",
+    "make-coverage-badge": "^1.2.0",
     "prettier": "^2.2.1",
     "rimraf": "^3.0.2",
     "ts-jest": "^26.5.4",

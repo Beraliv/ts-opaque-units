@@ -12,4 +12,5 @@ module.exports = {
       statements: 100,
     },
   },
+  coverageReporters: ["json-summary"],
 };
