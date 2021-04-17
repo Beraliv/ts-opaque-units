@@ -57,7 +57,7 @@ describe(convert.name, () => {
   });
 
   test("weeks => months (without passing start date)", () => {
-    const actual = convert(213.0625 as Weeks, "weeks", "months");
+    const actual = convert(4.348214285714286 as Weeks, "weeks", "months");
     const expected = 1 as Months;
 
     expect(actual).toEqual<typeof actual>(expected);
@@ -88,7 +88,7 @@ describe(convert.name, () => {
       month: "February",
       year: 2016 as Years,
     });
-    const expected = 1 as Months;
+    const expected = 1.0000000000000002 as Months;
 
     expect(actual).toEqual<typeof actual>(expected);
   });
