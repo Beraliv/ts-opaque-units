@@ -291,16 +291,6 @@ describe(convert.name, () => {
     expect(actual).toEqual<typeof actual>(expected);
   });
 
-  test("seconds => decades (for 2020)", () => {
-    const actual = convert(3_155_673_600 as Seconds, "seconds", "centuries", {
-      month: "January",
-      year: 2020 as Years,
-    });
-    const expected = 1 as Centuries;
-
-    expect(actual).toEqual<typeof actual>(expected);
-  });
-
   test("seconds => centuries (for 2020)", () => {
     const actual = convert(3_155_673_600 as Seconds, "seconds", "centuries", {
       month: "January",

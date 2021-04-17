@@ -351,18 +351,6 @@ describe(convert.name, () => {
     expect(actual).toEqual<typeof actual>(expected);
   });
 
-  test("milliseconds => decades (for 2020)", () => {
-    const actual = convert(
-      3_155_673_600_000 as Milliseconds,
-      "milliseconds",
-      "centuries",
-      { month: "January", year: 2020 as Years }
-    );
-    const expected = 1 as Centuries;
-
-    expect(actual).toEqual<typeof actual>(expected);
-  });
-
   test("milliseconds => centuries (for 2020)", () => {
     const actual = convert(
       3_155_673_600_000 as Milliseconds,
