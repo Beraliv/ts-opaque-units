@@ -158,12 +158,12 @@ describe(daysToMonths.name, () => {
     expect(actual).toEqual<typeof actual>(expected);
   });
 
-  test("returns 642 for 19541 days from October 1967", () => {
-    const actual = daysToMonths(19541 as Days, {
-      month: "October",
-      year: 1967 as Years,
+  test("returns 12000 for 365242 days from January 2020", () => {
+    const actual = daysToMonths(365242 as Days, {
+      month: "January",
+      year: 2020 as Years,
     });
-    const expected = 642 as Months;
+    const expected = 12000 as Months;
 
     expect(actual).toEqual<typeof actual>(expected);
   });

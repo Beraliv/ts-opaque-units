@@ -13,12 +13,6 @@ import { Years } from "../../../src/time/types/Years";
 
 describe(convert.name, () => {
   test("returns value for the same start and end", () => {
-    expect(convert(2 as Milliseconds, "milliseconds", "milliseconds")).toEqual(
-      2
-    );
-    expect(convert(3 as Seconds, "seconds", "seconds")).toEqual(3);
-    expect(convert(4 as Minutes, "minutes", "minutes")).toEqual(4);
-    expect(convert(5 as Hours, "hours", "hours")).toEqual(5);
     expect(convert(6 as Days, "days", "days")).toEqual(6);
     expect(convert(7 as Weeks, "weeks", "weeks")).toEqual(7);
     expect(convert(8 as Months, "months", "months")).toEqual(8);
@@ -27,56 +21,6 @@ describe(convert.name, () => {
     expect(convert(11 as Centuries, "centuries", "centuries")).toEqual(11);
     expect(convert(12 as Millenniums, "millenniums", "millenniums")).toEqual(
       12
-    );
-  });
-
-  test("throw error for weeks => months and vice versa", () => {
-    expect(() => convert(1 as Weeks, "weeks", "months")).toThrow(
-      `ImplementationTypeError: does NOT support weeks => months`
-    );
-
-    expect(() => convert(1 as Months, "months", "weeks")).toThrow(
-      `ImplementationTypeError: does NOT support months => weeks`
-    );
-  });
-
-  test("throw error for weeks => years and vice versa", () => {
-    expect(() => convert(1 as Weeks, "weeks", "years")).toThrow(
-      `ImplementationTypeError: does NOT support weeks => years`
-    );
-
-    expect(() => convert(1 as Years, "years", "weeks")).toThrow(
-      `ImplementationTypeError: does NOT support years => weeks`
-    );
-  });
-
-  test("throw error for weeks => decades and vice versa", () => {
-    expect(() => convert(1 as Weeks, "weeks", "decades")).toThrow(
-      `ImplementationTypeError: does NOT support weeks => decades`
-    );
-
-    expect(() => convert(1 as Decades, "decades", "weeks")).toThrow(
-      `ImplementationTypeError: does NOT support decades => weeks`
-    );
-  });
-
-  test("throw error for weeks => centuries and vice versa", () => {
-    expect(() => convert(1 as Weeks, "weeks", "centuries")).toThrow(
-      `ImplementationTypeError: does NOT support weeks => centuries`
-    );
-
-    expect(() => convert(1 as Centuries, "centuries", "weeks")).toThrow(
-      `ImplementationTypeError: does NOT support centuries => weeks`
-    );
-  });
-
-  test("throw error for weeks => millenniums and vice versa", () => {
-    expect(() => convert(1 as Weeks, "weeks", "millenniums")).toThrow(
-      `ImplementationTypeError: does NOT support weeks => millenniums`
-    );
-
-    expect(() => convert(1 as Millenniums, "millenniums", "weeks")).toThrow(
-      `ImplementationTypeError: does NOT support millenniums => weeks`
     );
   });
 
@@ -174,48 +118,6 @@ describe(convert.name, () => {
   test("returns hours from days", () => {
     const actual = convert(1 as Days, "days", "hours");
     const expected = 24 as Hours;
-
-    expect(actual).toEqual<typeof actual>(expected);
-  });
-
-  test("returns hours from minutes", () => {
-    const actual = convert(60 as Minutes, "minutes", "hours");
-    const expected = 1 as Hours;
-
-    expect(actual).toEqual<typeof actual>(expected);
-  });
-
-  test("returns minutes from hours", () => {
-    const actual = convert(1 as Hours, "hours", "minutes");
-    const expected = 60 as Minutes;
-
-    expect(actual).toEqual<typeof actual>(expected);
-  });
-
-  test("returns minutes from seconds", () => {
-    const actual = convert(60 as Seconds, "seconds", "minutes");
-    const expected = 1 as Minutes;
-
-    expect(actual).toEqual<typeof actual>(expected);
-  });
-
-  test("returns seconds from minutes", () => {
-    const actual = convert(1 as Minutes, "minutes", "seconds");
-    const expected = 60 as Seconds;
-
-    expect(actual).toEqual<typeof actual>(expected);
-  });
-
-  test("returns seconds from milliseconds", () => {
-    const actual = convert(1_000 as Milliseconds, "milliseconds", "seconds");
-    const expected = 1 as Seconds;
-
-    expect(actual).toEqual<typeof actual>(expected);
-  });
-
-  test("returns milliseconds from seconds", () => {
-    const actual = convert(1 as Seconds, "seconds", "milliseconds");
-    const expected = 1_000 as Milliseconds;
 
     expect(actual).toEqual<typeof actual>(expected);
   });
