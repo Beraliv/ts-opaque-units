@@ -91,6 +91,8 @@ export function convert<
         if (previousResult) {
           result = previousResult;
           previousResult = undefined;
+        } else {
+          result *= ascendingSteps[index - 1];
         }
         result = daysToMonths(result as Days, start as StartForDaysToMonths);
       } else {
