@@ -24,56 +24,6 @@ describe(convert.name, () => {
     );
   });
 
-  test("throw error for weeks => months and vice versa", () => {
-    expect(() => convert(1 as Weeks, "weeks", "months")).toThrow(
-      `ImplementationTypeError: does NOT support weeks => months`
-    );
-
-    expect(() => convert(1 as Months, "months", "weeks")).toThrow(
-      `ImplementationTypeError: does NOT support months => weeks`
-    );
-  });
-
-  test("throw error for weeks => years and vice versa", () => {
-    expect(() => convert(1 as Weeks, "weeks", "years")).toThrow(
-      `ImplementationTypeError: does NOT support weeks => years`
-    );
-
-    expect(() => convert(1 as Years, "years", "weeks")).toThrow(
-      `ImplementationTypeError: does NOT support years => weeks`
-    );
-  });
-
-  test("throw error for weeks => decades and vice versa", () => {
-    expect(() => convert(1 as Weeks, "weeks", "decades")).toThrow(
-      `ImplementationTypeError: does NOT support weeks => decades`
-    );
-
-    expect(() => convert(1 as Decades, "decades", "weeks")).toThrow(
-      `ImplementationTypeError: does NOT support decades => weeks`
-    );
-  });
-
-  test("throw error for weeks => centuries and vice versa", () => {
-    expect(() => convert(1 as Weeks, "weeks", "centuries")).toThrow(
-      `ImplementationTypeError: does NOT support weeks => centuries`
-    );
-
-    expect(() => convert(1 as Centuries, "centuries", "weeks")).toThrow(
-      `ImplementationTypeError: does NOT support centuries => weeks`
-    );
-  });
-
-  test("throw error for weeks => millenniums and vice versa", () => {
-    expect(() => convert(1 as Weeks, "weeks", "millenniums")).toThrow(
-      `ImplementationTypeError: does NOT support weeks => millenniums`
-    );
-
-    expect(() => convert(1 as Millenniums, "millenniums", "weeks")).toThrow(
-      `ImplementationTypeError: does NOT support millenniums => weeks`
-    );
-  });
-
   test("returns millenniums from centuries", () => {
     const actual = convert(10 as Centuries, "centuries", "millenniums");
     const expected = 1 as Millenniums;
