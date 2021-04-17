@@ -1,5 +1,5 @@
-import { DAYS_IN_MONTHS } from "../../../internal/time/constants/DAYS_IN_MONTHS";
-import { MonthName } from "../../../internal/time/types/MonthName";
+import { DAYS_IN_MONTHS } from "../../internal/time/constants/DAYS_IN_MONTHS";
+import { MonthName } from "../../internal/time/types/MonthName";
 import { Days } from "../types/Days";
 import { Months } from "../types/Months";
 import { Years } from "../types/Years";
