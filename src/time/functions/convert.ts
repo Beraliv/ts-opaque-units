@@ -11,7 +11,6 @@ import { Seconds } from "../types/Seconds";
 import { Weeks } from "../types/Weeks";
 import { Years } from "../types/Years";
 import { daysToMonths, StartForDaysToMonths } from "./daysToMonths";
-import { StartForDaysToYears } from "./daysToYears";
 import { monthsToDays } from "./monthsToDays";
 
 const measurements = [
@@ -66,8 +65,6 @@ type cases = [
   Expect<Equal<MeasurementAndTimeMapping[MeasurementType], TimeType[number]>>
 ];
 
-type Start = StartForDaysToMonths | StartForDaysToYears;
-
 export function convert<
   From extends keyof MeasurementAndTimeMapping,
   To extends keyof MeasurementAndTimeMapping
@@ -75,7 +72,7 @@ export function convert<
   value: MeasurementAndTimeMapping[From],
   from: From,
   to: To,
-  start?: Start
+  start?: StartForDaysToMonths
 ): MeasurementAndTimeMapping[To] {
   let previousResult: number | undefined;
   let result = value as number;
