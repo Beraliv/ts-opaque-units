@@ -1,0 +1,15 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+yarn test || echo '[pre-push] tests failed ❌'
+if [ -z $(git status --porcelain) ];
+then
+    echo "[pre-push] coverage badge is up-to-date ✅"
+else
+    echo "[pre-push] coverage badge was changed ⚠️"
+    git add .
+    git commit -m 'test: 🔄 update coverage badge'
+    echo "[pre-push] coverage badge is updated 🔄"
+    echo "[pre-push] push updated coverage badge 🚀"
+    git push
+fi
