@@ -13,12 +13,6 @@ import { Years } from "../../../src/time/types/Years";
 
 describe(convert.name, () => {
   test("returns value for the same start and end", () => {
-    expect(convert(2 as Milliseconds, "milliseconds", "milliseconds")).toEqual(
-      2
-    );
-    expect(convert(3 as Seconds, "seconds", "seconds")).toEqual(3);
-    expect(convert(4 as Minutes, "minutes", "minutes")).toEqual(4);
-    expect(convert(5 as Hours, "hours", "hours")).toEqual(5);
     expect(convert(6 as Days, "days", "days")).toEqual(6);
     expect(convert(7 as Weeks, "weeks", "weeks")).toEqual(7);
     expect(convert(8 as Months, "months", "months")).toEqual(8);
@@ -174,41 +168,6 @@ describe(convert.name, () => {
   test("returns hours from days", () => {
     const actual = convert(1 as Days, "days", "hours");
     const expected = 24 as Hours;
-
-    expect(actual).toEqual<typeof actual>(expected);
-  });
-
-  test("returns hours from minutes", () => {
-    const actual = convert(60 as Minutes, "minutes", "hours");
-    const expected = 1 as Hours;
-
-    expect(actual).toEqual<typeof actual>(expected);
-  });
-
-  test("returns minutes from hours", () => {
-    const actual = convert(1 as Hours, "hours", "minutes");
-    const expected = 60 as Minutes;
-
-    expect(actual).toEqual<typeof actual>(expected);
-  });
-
-  test("returns minutes from seconds", () => {
-    const actual = convert(60 as Seconds, "seconds", "minutes");
-    const expected = 1 as Minutes;
-
-    expect(actual).toEqual<typeof actual>(expected);
-  });
-
-  test("returns seconds from minutes", () => {
-    const actual = convert(1 as Minutes, "minutes", "seconds");
-    const expected = 60 as Seconds;
-
-    expect(actual).toEqual<typeof actual>(expected);
-  });
-
-  test("returns milliseconds from seconds", () => {
-    const actual = convert(1 as Seconds, "seconds", "milliseconds");
-    const expected = 1_000 as Milliseconds;
 
     expect(actual).toEqual<typeof actual>(expected);
   });
