@@ -61,7 +61,6 @@ describe(convert.name, () => {
     const expected = 1 as Months;
 
     expect(actual).toEqual<typeof actual>(expected);
-    expect(actual).toEqual<typeof actual>(expected);
   });
 
   test("weeks => 1 month (for January)", () => {
@@ -235,7 +234,7 @@ describe(convert.name, () => {
   });
 
   test("weeks => 642 months", () => {
-    const actual = convert((2781 + 4 / 7) as Weeks, "weeks", "months", {
+    const actual = convert((2_791 + 4 / 7) as Weeks, "weeks", "months", {
       month: "October",
       year: 1967 as Years,
     });
