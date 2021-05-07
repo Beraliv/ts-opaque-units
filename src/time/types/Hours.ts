@@ -1,5 +1,3 @@
-declare const hours: unique symbol;
+import { Opaque } from "../../internal/types/Opaque";
 
-export type Hours = number & {
-  readonly [hours]: never;
-};
+export type Hours = Opaque<number, "hours">;
