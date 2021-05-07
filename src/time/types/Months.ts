@@ -1,5 +1,3 @@
-declare const months: unique symbol;
+import { Opaque } from "../../internal/types/Opaque";
 
-export type Months = number & {
-  readonly [months]: never;
-};
+export type Months = Opaque<number, "months">;
