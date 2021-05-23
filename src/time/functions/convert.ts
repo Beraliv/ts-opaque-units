@@ -65,7 +65,7 @@ type cases = [
   Expect<Equal<MeasurementAndTimeMapping[MeasurementType], TimeType[number]>>
 ];
 
-export function convert<
+export const convert = /* #__PURE__ */ <
   From extends keyof MeasurementAndTimeMapping,
   To extends keyof MeasurementAndTimeMapping
 >(
@@ -73,7 +73,7 @@ export function convert<
   from: From,
   to: To,
   start?: StartForDaysToMonths
-): MeasurementAndTimeMapping[To] {
+): MeasurementAndTimeMapping[To] => {
   let previousResult: number | undefined;
   let result = value as number;
   let startIndex = measurements.findIndex(
@@ -118,4 +118,4 @@ export function convert<
   }
 
   return result as MeasurementAndTimeMapping[To];
-}
+};
