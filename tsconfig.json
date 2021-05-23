@@ -8,7 +8,8 @@
     "lib": ["esnext"],
     "sourceMap": true,
     "declaration": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "esModuleInterop": true
   },
   "include": ["**/*.ts"],
   "exclude": ["node_modules", "dist", "tests"]
