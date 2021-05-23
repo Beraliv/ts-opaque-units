@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "rimraf ./dist && tsc -p tsconfig.prod.json --outDir ./dist",
+    "build": "rimraf ./dist && tsc -p tsconfig.json --outDir ./dist",
     "test": "jest --coverage && yarn test:badge || (yarn test:badge && exit 1)",
     "test:badge": "make-coverage-badge --output-path ./badges/coverage.svg",
     "check:ts": "tsc --noEmit",
