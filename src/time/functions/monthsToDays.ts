@@ -10,7 +10,10 @@ export interface StartForMonthsToDays {
   year: Years;
 }
 
-export const monthsToDays = (months: Months, start?: StartForMonthsToDays) => {
+export const monthsToDays = /* #__PURE__ */ (
+  months: Months,
+  start?: StartForMonthsToDays
+) => {
   if (start === undefined) {
     return (months * 30.4375) as Days;
   }
