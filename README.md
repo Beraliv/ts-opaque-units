@@ -1,8 +1,8 @@
 # ts-opaque-units
 
-![minified](https://badgen.net/bundlephobia/min/ts-opaque-units)
-![minified + gzip](https://badgen.net/bundlephobia/minzip/ts-opaque-units)
-![tree-shaking support](https://badgen.net/bundlephobia/tree-shaking/ts-opaque-units)
+![minified](https://badgen.net/bundlephobia/min/ts-opaque-units@latest)
+![minified + gzip](https://badgen.net/bundlephobia/minzip/ts-opaque-units@latest)
+![tree-shaking support](https://badgen.net/bundlephobia/tree-shaking/ts-opaque-units@latest)
 ![coverage](./badges/coverage.svg)
 
 Small TypeScript opaque measurement library
