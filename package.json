@@ -31,9 +31,6 @@
     "url": "https://github.com/Beraliv/ts-opaque-units/issues"
   },
   "homepage": "https://github.com/Beraliv/ts-opaque-units#readme",
-  "peerDependencies": {
-    "typescript": "^4.0.0"
-  },
   "devDependencies": {
     "@type-challenges/utils": "^0.1.1",
     "@types/jest": "^26.0.22",
