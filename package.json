@@ -1,8 +1,9 @@
 {
   "name": "ts-opaque-units",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "TypeScript opaque measurement",
   "main": "dist/index.js",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "rimraf ./dist && tsc -p tsconfig.json --outDir ./dist",
